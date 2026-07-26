@@ -13,16 +13,16 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 ///         community a transparent, on-chain record of sentiment before the team
 ///         acts, not to bind or automate that action.
 ///
-/// @dev IMPORTANT LIMITATION: $VELL's launch mechanism/token contract is not yet
-///      decided, and is not guaranteed to implement checkpointed balances (OpenZeppelin's
-///      ERC20Votes pattern). Voting weight here is therefore read via balanceOf()
-///      at the moment each vote is cast, NOT a historical snapshot. This means a
-///      holder could in principle vote, transfer their $VELL to another wallet,
-///      and vote again from that wallet — a known, accepted limitation of the
-///      "hold" model chosen for $VELL (see vellichor-vell-token.md). Do not use
-///      this contract for anything higher-stakes than advisory bottle-acquisition
-///      sentiment until $VELL's token contract is verified to support checkpoints,
-///      or a snapshot mechanism is added.
+/// @dev IMPORTANT LIMITATION: $VELL (PonsLauncherToken.sol, live at
+///      0x3d8C79bE2071CA84b0EfAe66E1437d9417ea4226) is a plain ERC20 and does NOT
+///      implement checkpointed balances (OpenZeppelin's ERC20Votes pattern). Voting
+///      weight here is therefore read via balanceOf() at the moment each vote is
+///      cast, NOT a historical snapshot. This means a holder could in principle vote,
+///      transfer their $VELL to another wallet, and vote again from that wallet — a
+///      known, accepted limitation of the "hold" model chosen for $VELL (see
+///      vellichor-vell-token.md). Do not use this contract for anything
+///      higher-stakes than advisory bottle-acquisition sentiment unless a snapshot
+///      mechanism is added.
 contract VellichorGovernance is Ownable {
 
     enum VoteType { Against, For, Abstain }

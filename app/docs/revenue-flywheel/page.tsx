@@ -22,9 +22,9 @@ const REVENUE_TABLE = [
     why: "Ongoing charge that funds (and should roughly offset) real insurance/storage cost, with any margin counting as revenue.",
   },
   {
-    flow: "Token launch treasury allocation (50% of $VELL raise)",
+    flow: "Capital from $VELL launch (pons launchpad trading)",
     revenue: "No — one-time capital, not revenue",
-    why: "This is a capital injection at token launch, not something that recurs. It seeds early bottle acquisitions; it doesn't repeat every cycle the way fees do.",
+    why: "PonsLauncherToken.sol has no contract-enforced treasury split — any capital reaching treasury comes from the deployer's own trading activity on the launch pool, not a guaranteed allocation. Even if realized, it's a one-time injection, not something that recurs like fees do.",
   },
 ];
 
@@ -45,7 +45,7 @@ const LOOP_STEPS = [
   },
   {
     title: "Treasury acquires the next bottle",
-    body: "Funded by accumulated fees (and, early on, by the $VELL token launch's treasury allocation — see below). Genesis Vault grows by one bottle at a time, per the roadmap.",
+    body: "Funded by accumulated fees (and, potentially early on, by capital realized from $VELL launch trading — see below, not guaranteed). Genesis Vault grows by one bottle at a time, per the roadmap.",
   },
   {
     title: "More bottles, more liquidity, attracts the next buyer",

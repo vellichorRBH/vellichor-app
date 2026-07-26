@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "$VELL token — Vellichor Docs",
-  description: "Vellichor's utility and governance token.",
+  description: "Vellichor's utility and governance token — live on Robinhood Chain via the pons launchpad.",
 };
 
 const FEE_TIERS = [
@@ -12,6 +12,8 @@ const FEE_TIERS = [
 ];
 
 const RESOLVED = [
+  "Launch platform: live on Robinhood Chain via the pons (ponsfamily.com) launchpad. Contract: 0x3d8C79bE2071CA84b0EfAe66E1437d9417ea4226.",
+  "Owner/admin surface: none. $VELL (PonsLauncherToken.sol) is a fixed-supply, immutable ERC-20 — no owner role, no mint function, no tax, no blacklist. The only time-boxed restriction is a formula-based anti-bot/anti-whale max-wallet/max-tx limit on pool buys during a fixed post-launch block window; afterward it behaves as a plain ERC-20 forever.",
   "Total supply: 1,000,000,000 $VELL.",
   "Priority drop access threshold: 1,000,000 $VELL (fixed count, no oracle needed).",
   'Fee discount tiers: 100,000 / 500,000 / 1,000,000 $VELL → 1.75% / 1.5% / 1.0% resulting fee (down from the 2% base). Corrected from an earlier ambiguous "1%/2%/5% discount" draft.',
@@ -20,8 +22,6 @@ const RESOLVED = [
 ];
 
 const OPEN = [
-  "Which platform/mechanism $VELL actually launches through — not yet decided.",
-  "Who/what actually holds the owner role — left undefined in this doc. This is a decision still being made internally, not a decision that's been made and is simply undocumented — resolve it before launch even if it stays out of public docs.",
   "Design and audit scope for the on-chain governance contract.",
 ];
 
@@ -33,7 +33,16 @@ export default function VellTokenPage() {
         $VELL token
       </h1>
       <p className="mt-2 text-sm italic leading-relaxed text-ink-dim">
-        Vellichor&apos;s utility and governance token. Launch platform not yet decided.
+        Vellichor&apos;s utility and governance token — live on Robinhood Chain via the{" "}
+        <a
+          href="https://www.ponsfamily.com/launchpad/0x3d8c79be2071ca84b0efae66e1437d9417ea4226"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-amber-deep hover:underline"
+        >
+          pons launchpad
+        </a>
+        .
       </p>
 
       <p className="mt-6 text-base leading-relaxed text-ink-dim">
@@ -48,44 +57,88 @@ export default function VellTokenPage() {
       <div className="mt-10">
         <h2 className="font-display text-lg font-normal text-ink">What $VELL is</h2>
         <p className="mt-3 text-base leading-relaxed text-ink-dim">
-          $VELL will be deployed on <strong className="text-ink">Robinhood Chain</strong> — the
-          same chain Vellichor&apos;s own contracts (
+          $VELL is live on <strong className="text-ink">Robinhood Chain</strong> — the same chain
+          Vellichor&apos;s own contracts (
           <code className="font-data text-sm">VellichorVault.sol</code>,{" "}
-          <code className="font-data text-sm">VellichorMarket.sol</code>) are deployed on. The
-          launch mechanism and platform haven&apos;t been decided yet, so anything platform-specific
-          (tax on buy/sell, owner admin surface, exact supply-issuance flow) is still open and will
-          depend on that choice.
+          <code className="font-data text-sm">VellichorMarket.sol</code>) are deployed on —
+          launched via the{" "}
+          <a
+            href="https://www.ponsfamily.com/launchpad/0x3d8c79be2071ca84b0efae66e1437d9417ea4226"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-amber-deep hover:underline"
+          >
+            pons launchpad
+          </a>{" "}
+          (<code className="font-data text-sm">PonsLauncherToken.sol</code>), trading against a
+          Uniswap V3 pool.
         </p>
+
+        <div className="mt-4 rounded-xl border border-line bg-panel-2 p-5">
+          <p className="font-data text-xs uppercase tracking-wide text-ink-dim">Contract</p>
+          <p className="mt-1 break-all font-data text-sm text-ink">
+            0x3d8C79bE2071CA84b0EfAe66E1437d9417ea4226
+          </p>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+            <a
+              href="https://robinhoodchain.blockscout.com/address/0x3d8c79be2071ca84b0efae66e1437d9417ea4226"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-deep hover:underline"
+            >
+              Blockscout
+            </a>
+            <a
+              href="https://dexscreener.com/robinhood/0x3d8c79be2071ca84b0efae66e1437d9417ea4226"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-deep hover:underline"
+            >
+              Dexscreener
+            </a>
+            <a
+              href="https://www.geckoterminal.com/robinhood/pools/0x3d8c79be2071ca84b0efae66e1437d9417ea4226"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-deep hover:underline"
+            >
+              GeckoTerminal
+            </a>
+          </div>
+        </div>
 
         <ul className="mt-4 flex flex-col gap-2">
           <li className="flex gap-2 text-base leading-relaxed text-ink-dim">
             <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
             <span>
-              <strong className="text-ink">Supply:</strong> 1,000,000,000 $VELL (fixed).
+              <strong className="text-ink">Supply:</strong> 1,000,000,000 $VELL, fixed — minted
+              once to the launch factory at deployment. No further minting is possible.
             </span>
           </li>
           <li className="flex gap-2 text-base leading-relaxed text-ink-dim">
             <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
             <span>
-              <strong className="text-ink">Tax:</strong> not yet decided — depends on the launch
-              mechanism eventually chosen.
+              <strong className="text-ink">Tax:</strong> none. The contract has no buy/sell tax
+              mechanism at all.
             </span>
           </li>
           <li className="flex gap-2 text-base leading-relaxed text-ink-dim">
             <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
             <span>
-              <strong className="text-ink">Controls:</strong> not yet decided — the admin surface
-              (owner role, any blacklist capability) depends on how $VELL ends up implemented.
+              <strong className="text-ink">Controls:</strong> none after launch — no owner role,
+              no mint function, no blacklist. The only restriction is a temporary, formula-based
+              max-wallet/max-tx limit on pool buys during a fixed post-launch block window
+              (anti-bot/anti-whale), after which the token behaves as a plain, fully liquid ERC-20.
             </span>
           </li>
         </ul>
 
         <div className="mt-5 rounded-xl border border-line bg-panel-2 p-5">
           <p className="text-sm leading-relaxed text-ink-dim">
-            <strong className="text-ink">Launch platform not yet decided.</strong> Whatever
-            mechanism Vellichor eventually launches $VELL through, resolve and document its admin
-            surface (owner role, tax, any blacklist capability) before launch — don&apos;t assume
-            it inherits any particular template&apos;s defaults.
+            <strong className="text-ink">$VELL is immutable and ownerless.</strong> Once deployed,
+            nobody — including Vellichor — can mint more supply, apply a tax, or blacklist an
+            address. The launch-window buy limits are enforced by a fixed formula in the contract
+            itself, not by admin discretion.
           </p>
         </div>
       </div>

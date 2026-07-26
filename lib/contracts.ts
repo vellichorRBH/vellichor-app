@@ -54,9 +54,10 @@ export const verificationConfigured = !!VELLICHOR_AUTHENTICITY_REGISTRY_ADDRESS;
 /**
  * VellichorGovernance + MockVELL — deployed independently of Vault/Market
  * (see vellichor-hardhat/deployments/robinhoodTestnet.governance.json).
- * MockVELL is a testnet-only stand-in with a public faucet(); real $VELL
- * launches separately, at which point a fresh VellichorGovernance should be
- * deployed pointing at the real token instead.
+ * MockVELL is a testnet-only stand-in with a public faucet(); real $VELL is
+ * now live on Robinhood Chain via the pons launchpad at
+ * 0x3d8C79bE2071CA84b0EfAe66E1437d9417ea4226 — a fresh VellichorGovernance
+ * should be deployed pointing at that address instead of MockVELL.
  */
 export const VELLICHOR_GOVERNANCE_ADDRESS = process.env.NEXT_PUBLIC_VELLICHOR_GOVERNANCE_ADDRESS as
   | `0x${string}`

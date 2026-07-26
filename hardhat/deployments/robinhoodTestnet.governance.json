@@ -4,6 +4,6 @@
   "deployer": "0x6ebbB286cfbfedeA0DB908B22f6c4c13971c95dC",
   "mockVell": "0x7Ceb64f43A0063B3b03A45DE9D153ea16bA28d08",
   "vellichorGovernance": "0xD9864F31CE501Ba9dD8F8aBE2f24837B12d6477C",
-  "note": "Independent of VellichorVault/VellichorMarket. Testnet-only MockVELL — redeploy against real $VELL once it launches.",
+  "note": "Independent of VellichorVault/VellichorMarket. Testnet-only MockVELL — redeploy against real $VELL, now live on Robinhood Chain mainnet via the pons launchpad at 0x3d8C79bE2071CA84b0EfAe66E1437d9417ea4226.",
   "deployedAt": "2026-07-20T09:56:26.358Z"
 }

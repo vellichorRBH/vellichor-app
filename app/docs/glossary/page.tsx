@@ -28,7 +28,7 @@ const TERMS = [
   },
   {
     term: "$VELL",
-    def: "Vellichor's separate governance/utility token; has no claim on any bottle. Launch platform not yet decided.",
+    def: "Vellichor's separate governance/utility token; has no claim on any bottle. Live on Robinhood Chain via the pons launchpad — fixed supply, immutable, no owner/tax/blacklist.",
   },
 ];
 
