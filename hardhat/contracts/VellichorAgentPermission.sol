@@ -7,7 +7,7 @@ pragma solidity ^0.8.24;
 ///         to act ONLY on their own collateral position, and ONLY within the bounds
 ///         they set. This is the on-chain half of the "buyer-scoped AI agent" concept
 ///         (see vellichor-collateral-agent-concept.md) — it does not include the
-///         agent itself (off-chain logic, Virtuals GAME framework integration, etc.),
+///         agent itself (off-chain logic, whatever agent framework it eventually integrates with, etc.),
 ///         just the permission boundary the agent would have to operate within.
 ///
 /// @dev CRITICAL DESIGN BOUNDARY: an agent granted permission here can NEVER touch

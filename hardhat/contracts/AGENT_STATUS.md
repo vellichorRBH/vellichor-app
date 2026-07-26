@@ -13,7 +13,7 @@ global "the agent").
 
 ## What does NOT exist
 - **No agent.** There is no off-chain logic that reads this permission and acts on
-  it — no Virtuals GAME framework integration, nothing running anywhere.
+  it — no agent framework integration, nothing running anywhere.
 - **Not wired to anything real.** No collateral contract (`VellichorVaultUnitWrapper.sol`,
   Morpho market) calls `hasValidPermission()` or would let an agent actually execute
   a `repay()`. This contract only tracks grants — it doesn't act on them.

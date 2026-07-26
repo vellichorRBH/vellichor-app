@@ -28,7 +28,7 @@ const TERMS = [
   },
   {
     term: "$VELL",
-    def: "Vellichor's separate governance/utility token, launched via Virtuals Protocol; has no claim on any bottle.",
+    def: "Vellichor's separate governance/utility token; has no claim on any bottle. Launch platform not yet decided.",
   },
 ];
 

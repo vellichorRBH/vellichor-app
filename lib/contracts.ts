@@ -55,8 +55,8 @@ export const verificationConfigured = !!VELLICHOR_AUTHENTICITY_REGISTRY_ADDRESS;
  * VellichorGovernance + MockVELL — deployed independently of Vault/Market
  * (see vellichor-hardhat/deployments/robinhoodTestnet.governance.json).
  * MockVELL is a testnet-only stand-in with a public faucet(); real $VELL
- * launches separately via Virtuals Genesis Launch, at which point a fresh
- * VellichorGovernance should be deployed pointing at the real token instead.
+ * launches separately, at which point a fresh VellichorGovernance should be
+ * deployed pointing at the real token instead.
  */
 export const VELLICHOR_GOVERNANCE_ADDRESS = process.env.NEXT_PUBLIC_VELLICHOR_GOVERNANCE_ADDRESS as
   | `0x${string}`

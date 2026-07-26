@@ -9,7 +9,7 @@ const CONTRACTS = [
   { contract: "VellichorVault", network: "Robinhood Chain mainnet", address: "0x78a3C6BDfc720E7095b3DD561bADA37D97c09645" },
   { contract: "VellichorMarket", network: "Robinhood Chain mainnet", address: "0x98EA3EFCba914496310DcC56F351dDe04995C395" },
   { contract: "USDG (payment token)", network: "Robinhood Chain mainnet", address: "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168" },
-  { contract: "$VELL", network: "Robinhood Chain (via Virtuals)", address: "not yet launched" },
+  { contract: "$VELL", network: "Robinhood Chain (launch platform TBD)", address: "not yet launched" },
 ];
 
 export default function ContractsPage() {

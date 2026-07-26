@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "$VELL token — Vellichor Docs",
-  description: "Vellichor's utility and governance token, launched via Virtuals Protocol.",
+  description: "Vellichor's utility and governance token.",
 };
 
 const FEE_TIERS = [
@@ -20,7 +20,8 @@ const RESOLVED = [
 ];
 
 const OPEN = [
-  "Who/what actually holds the owner role — left undefined in this doc, matching how Vimen's own public docs also don't disclose this for $VIM. Note this is a decision still being made internally, not a decision that's been made and is simply undocumented — resolve it before Genesis Launch even if it stays out of public docs.",
+  "Which platform/mechanism $VELL actually launches through — not yet decided.",
+  "Who/what actually holds the owner role — left undefined in this doc. This is a decision still being made internally, not a decision that's been made and is simply undocumented — resolve it before launch even if it stays out of public docs.",
   "Design and audit scope for the on-chain governance contract.",
 ];
 
@@ -32,8 +33,7 @@ export default function VellTokenPage() {
         $VELL token
       </h1>
       <p className="mt-2 text-sm italic leading-relaxed text-ink-dim">
-        Vellichor&apos;s utility and governance token — launched via Virtuals Protocol Genesis
-        Launch.
+        Vellichor&apos;s utility and governance token. Launch platform not yet decided.
       </p>
 
       <p className="mt-6 text-base leading-relaxed text-ink-dim">
@@ -48,50 +48,44 @@ export default function VellTokenPage() {
       <div className="mt-10">
         <h2 className="font-display text-lg font-normal text-ink">What $VELL is</h2>
         <p className="mt-3 text-base leading-relaxed text-ink-dim">
-          $VELL is launched on <strong className="text-ink">Virtuals Protocol</strong> via
-          Genesis Launch, and will be a Virtuals <code className="font-data text-sm">AgentTokenV4</code>{" "}
-          contract on <strong className="text-ink">Robinhood Chain</strong> — the same standard
-          $VIM (Vimen&apos;s token) uses, and the same chain Vellichor&apos;s own contracts
-          (<code className="font-data text-sm">VellichorVault.sol</code>,{" "}
-          <code className="font-data text-sm">VellichorMarket.sol</code>) are deployed on.
+          $VELL will be deployed on <strong className="text-ink">Robinhood Chain</strong> — the
+          same chain Vellichor&apos;s own contracts (
+          <code className="font-data text-sm">VellichorVault.sol</code>,{" "}
+          <code className="font-data text-sm">VellichorMarket.sol</code>) are deployed on. The
+          launch mechanism and platform haven&apos;t been decided yet, so anything platform-specific
+          (tax on buy/sell, owner admin surface, exact supply-issuance flow) is still open and will
+          depend on that choice.
         </p>
 
         <ul className="mt-4 flex flex-col gap-2">
           <li className="flex gap-2 text-base leading-relaxed text-ink-dim">
             <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
             <span>
-              <strong className="text-ink">Supply:</strong> 1,000,000,000 $VELL (fixed, matching
-              the standard Virtuals <code className="font-data text-sm">AgentTokenV4</code> supply
-              convention).
+              <strong className="text-ink">Supply:</strong> 1,000,000,000 $VELL (fixed).
             </span>
           </li>
           <li className="flex gap-2 text-base leading-relaxed text-ink-dim">
             <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
             <span>
-              <strong className="text-ink">Tax:</strong> a 1% fee on buys and sells — this is a
-              standard Virtuals agent-token mechanism, not something Vellichor adds or configures
-              independently.
+              <strong className="text-ink">Tax:</strong> not yet decided — depends on the launch
+              mechanism eventually chosen.
             </span>
           </li>
           <li className="flex gap-2 text-base leading-relaxed text-ink-dim">
             <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
             <span>
-              <strong className="text-ink">Controls:</strong> the token owner can adjust the tax
-              and maintain an address blacklist — the standard Virtuals admin surface, inherited
-              automatically from launching through Virtuals&apos; template.
+              <strong className="text-ink">Controls:</strong> not yet decided — the admin surface
+              (owner role, any blacklist capability) depends on how $VELL ends up implemented.
             </span>
           </li>
         </ul>
 
         <div className="mt-5 rounded-xl border border-line bg-panel-2 p-5">
           <p className="text-sm leading-relaxed text-ink-dim">
-            <strong className="text-ink">$VELL carries Virtuals&apos; admin surface.</strong>{" "}
-            Because it&apos;s minted through Virtuals&apos;{" "}
-            <code className="font-data text-xs">AgentTokenV4</code> template, it inherits the
-            same owner-controlled tax and blacklist capability as every other token launched that
-            way — this is not unique to Vellichor and cannot be removed by choosing Genesis
-            Launch. What Vellichor controls is the token owner — the address able to adjust tax
-            and manage the blacklist.
+            <strong className="text-ink">Launch platform not yet decided.</strong> Whatever
+            mechanism Vellichor eventually launches $VELL through, resolve and document its admin
+            surface (owner role, tax, any blacklist capability) before launch — don&apos;t assume
+            it inherits any particular template&apos;s defaults.
           </p>
         </div>
       </div>

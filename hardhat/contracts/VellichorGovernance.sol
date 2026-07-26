@@ -13,8 +13,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 ///         community a transparent, on-chain record of sentiment before the team
 ///         acts, not to bind or automate that action.
 ///
-/// @dev IMPORTANT LIMITATION: $VELL is minted via Virtuals' AgentTokenV4 template,
-///      which is not guaranteed to implement checkpointed balances (OpenZeppelin's
+/// @dev IMPORTANT LIMITATION: $VELL's launch mechanism/token contract is not yet
+///      decided, and is not guaranteed to implement checkpointed balances (OpenZeppelin's
 ///      ERC20Votes pattern). Voting weight here is therefore read via balanceOf()
 ///      at the moment each vote is cast, NOT a historical snapshot. This means a
 ///      holder could in principle vote, transfer their $VELL to another wallet,
